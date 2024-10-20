@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="yogaimage.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atma Yoga</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #0056b3;
+        }
+        .description {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .description strong {
+            font-size: 18px;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        td {
+            padding: 12px;
+            vertical-align: top;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 6px 0;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        button {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #003d80;
+        }
+        .contact {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+        .contact strong {
+            color: #333;
+        }
+        .email {
+            font-weight: normal;
+        }
+    </style>
+    <script>
+        function addRow() {
+            var table = document.getElementById("asanaTable");
+            var newRow = table.insertRow(table.rows.length - 1);
+            newRow.innerHTML = `
+                <td>
+                    <select name="healthIssue[]">
+                        <option value="Anxiety">Anxiety</option>
+                        <option value="Depression">Depression</option>
+                        <option value="Mood swings">Mood swings</option>
+                        <option value="Loneliness">Loneliness</option>
+                        <option value="Anger">Anger</option>
+                        <option value="Grief">Grief</option>
+                        <option value="Low self-esteem">Low self-esteem</option>
+                        <option value="Burnout">Burnout</option>
+                        <option value="Stress">Stress</option>
+                        <option value="Fear of failure">Fear of failure</option>
+                        <option value="Overthinking">Overthinking</option>
+                        <option value="Lack of motivation">Lack of motivation</option>
+                        <option value="Emotional exhaustion">Emotional exhaustion</option>
+                        <option value="Feeling overwhelmed">Feeling overwhelmed</option>
+                        <option value="Perfectionism">Perfectionism</option>
+                        <option value="Social anxiety">Social anxiety</option>
+                        <option value="Feelings of isolation">Feelings of isolation</option>
+                        <option value="Lack of purpose">Lack of purpose</option>
+                        <option value="Work-related stress">Work-related stress</option>
+                        <option value="Relationship issues">Relationship issues</option>
+                        <option value="Difficulty relaxing">Difficulty relaxing</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="asana[]">
+                        <option value="Adho Mukha Shvanasana">Adho Mukha Shvanasana</option>
+                        <option value="Adho Mukha Vrikshasana">Adho Mukha Vrikshasana</option>
+                        <option value="Akarna Dhanurasana">Akarna Dhanurasana</option>
+                        <option value="Anantasana">Anantasana</option>
+                        <option value="Anjaneyasana">Anjaneyasana</option>
+                        <option value="Ardha Chandrasana">Ardha Chandrasana</option>
+                        <option value="Ashtanga Namaskara">Ashtanga Namaskara</option>
+                        <option value="Astavakrasana">Astavakrasana</option>
+                        <option value="Baddha Konasana">Baddha Konasana</option>
+                        <option value="Bhadrasana">Bhadrasana</option>
+                        <option value="Bakasana">Bakasana</option>
+                        <option value="Kakasana">Kakasana</option>
+                        <option value="Balasana">Balasana</option>
+                        <option value="Bhairavasana">Bhairavasana</option>
+                        <option value="Ankushasana">Ankushasana</option>
+                        <option value="Bharadvajasana">Bharadvajasana</option>
+                        <option value="Bhekasana">Bhekasana</option>
+                        <option value="Bhujangasana">Bhujangasana</option>
+                        <option value="Bhujapidasana">Bhujapidasana</option>
+                        <option value="Bidalasana">Bidalasana</option>
+                        <option value="Marjariasana">Marjariasana</option>
+                        <option value="Chaturanga Dandasana">Chaturanga Dandasana</option>
+                        <option value="Dandasana">Dandasana</option>
+                        <option value="Dhanurasana">Dhanurasana</option>
+                        <option value="Durvasasana">Durvasasana</option>
+                        <option value="Garbha Pindasana">Garbha Pindasana</option>
+                        <option value="Garudasana">Garudasana</option>
+                        <option value="Gomukhasana">Gomukhasana</option>
+                        <option value="Gorakshasana">Gorakshasana</option>
+                        <option value="Halasana">Halasana</option>
+                        <option value="Hanumanasana">Hanumanasana</option>
+                        <option value="Janusirsasana">Janusirsasana</option>
+                        <option value="Jathara Parivartanasana">Jathara Parivartanasana</option>
+                        <option value="Kapotasana">Kapotasana</option>
+                        <option value="Karnapidasana">Karnapidasana</option>
+                        <option value="Kaundinyasana">Kaundinyasana</option>
+                        <option value="Kraunchasana">Kraunchasana</option>
+                        <option value="Kukkutasana">Kukkutasana</option>
+                        <option value="Kurmasana">Kurmasana</option>
+                        <option value="Lolasana">Lolasana</option>
+                        <option value="Makarasana">Makarasana</option>
+                        <option value="Malasana">Malasana</option>
+                        <option value="Mandukasana">Mandukasana</option>
+                        <option value="Marichyasana">Marichyasana</option>
+                        <option value="Matsyasana">Matsyasana</option>
+                        <option value="Matsyendrasana">Matsyendrasana</option>
+                        <option value="Mayurasana">Mayurasana</option>
+                        <option value="Muktasana">Muktasana</option>
+                        <option value="Natarajasana">Natarajasana</option>
+                        <option value="Navasana">Navasana</option>
+                        <option value="Naukasana">Naukasana</option>
+                        <option value="Padmasana">Padmasana</option>
+                        <option value="Parighasana">Parighasana</option>
+                        <option value="Parshvakonasana">Parshvakonasana</option>
+                        <option value="Parshvottanasana">Parshvottanasana</option>
+                        <option value="Pashasana">Pashasana</option>
+                        <option value="Paschimottanasana">Paschimottanasana</option>
+                        <option value="Pincha Mayurasana">Pincha Mayurasana</option>
+                        <option value="Prasarita Padottanasana">Prasarita Padottanasana</option>
+                        <option value="Rajakapotasana">Rajakapotasana</option>
+                        <option value="Shalabhasana">Shalabhasana</option>
+                        <option value="Sarvangasana">Sarvangasana</option>
+                        <option value="Samakonasana">Samakonasana</option>
+                        <option value="Shavasana">Shavasana</option>
+                        <option value="Setu Bandha Sarvangasana">Setu Bandha Sarvangasana</option>
+                        <option value="Siddhasana">Siddhasana</option>
+                        <option value="Siddha Yoni Asana">Siddha Yoni Asana</option>
+                        <option value="Simhasana">Simhasana</option>
+                        <option value="Shirshasana">Shirshasana</option>
+                        <option value="Kapalasana">Kapalasana</option>
+                        <option value="Sukhasana">Sukhasana</option>
+                        <option value="Supta Padangusthasana">Supta Padangusthasana</option>
+                        <option value="Surya Namaskar">Surya Namaskar</option>
+                        <option value="Svastikasana">Svastikasana</option>
+                        <option value="Tadasana">Tadasana</option>
+                        <option value="Tittibhasana">Tittibhasana</option>
+                        <option value="Trikonasana">Trikonasana</option>
+                        <option value="Utthita Trikonasana">Utthita Trikonasana</option>
+                        <option value="Trivikramasana">Trivikramasana</option>
+                        <option value="Tulasana">Tulasana</option>
+                        <option value="Upavishta Konasana">Upavishta Konasana</option>
+                        <option value="Urdhva Dhanurasana">Urdhva Dhanurasana</option>
+                        <option value="Urdhva Mukha Shvanasana">Urdhva Mukha Shvanasana</option>
+                        <option value="Ushtrasana">Ushtrasana</option>
+                        <option value="Utkatasana">Utkatasana</option>
+                        <option value="Uttanasana">Uttanasana</option>
+                        <option value="Utthita Hastapadangusthasana">Utthita Hastapadangusthasana</option>
+                        <option value="Vairasana">Vairasana</option>
+                        <option value="Vasisthasana">Vasisthasana</option>
+                        <option value="Virabhadrasana">Virabhadrasana</option>
+                        <option value="Virabhadrasana II">Virabhadrasana II</option>
+                        <option value="Vrksasana">Vrksasana</option>
+                        <option value="Yoga Nidra">Yoga Nidra</option>
+                    </select>
+                </td>
+                <td>
+                                    <select name="time[]" style="width: 100%;">
+                                        <option value="AM">AM</option>
+                                        <option value="PM">PM</option>
+                                    </select>
+                                </td>
+            `;
+            table.appendChild(newRow);
+        }    
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Atma Yoga</h2>
+        <p class="description">
+            We are conducting a survey to gain insights into your lifestyle goals, emotional challenges, and overall well-being. The purpose of this survey is to develop a personalized recommendation system that suggests yoga asanas tailored to your specific needs, helping you navigate emotional struggles and enhance your mental and physical health. Your honest responses will help us to curate a list of yoga practices designed to promote inner balance, stress relief, and personal growth. Kindly share your honest insights in this form to help us create the best experience for you. Please note, this form is intended for those who currently practice yoga.</strong>
+        </p>
+        <p class="description">
+            For further queries, feel free to contact us:
+        </p>
+        <p class="contact">
+            <strong>Senthil Kumar T:</strong> <span class="email">t_senthilkumar@cb.amrita.edu</span><br>
+            <strong>Thrisha:</strong> <span class="email">thrisharsg@gmail.com</span><br>
+            <strong>Harshitha:</strong> <span class="email">harshithathanik@gmail.com</span><br>
+            <strong>Pratiksha:</strong> <span class="email">pratikshacauverykp@gmail.com</span>
+        </p>
+        <p class="description">For more information on asanas and yoga poses, <span class="reference-link"><a href="asana_page.html" target="_blank">click here</a></span>.</p>
+        
+        <form id="yogaForm">
+            <table>
+                <tr>
+                    <td><label for="name">Name:</label></td>
+                    <td><input type="text" id="name" name="name" required></td>
+                </tr>
+                <tr>
+                    <td><label for="age">Age:</label></td>
+                    <td><input type="number" id="age" name="age" required></td>
+                </tr>
+                <tr>
+                    <td><label for="gender">Gender:</label></td>
+                    <td>
+                        <select id="gender" name="gender" required>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <table id="asanaTable">
+                            <tr>
+                                <td><strong>Health Issue</strong></td>
+                                <td><strong>Asana Practiced</strong></td>
+                                <td><strong>Time</strong></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select name="healthIssue[]">
+                                        <option value="Anxiety">Anxiety</option>
+                                        <option value="Depression">Depression</option>
+                                        <option value="Mood swings">Mood swings</option>
+                                        <option value="Loneliness">Loneliness</option>
+                                        <option value="Anger">Anger</option>
+                                        <option value="Grief">Grief</option>
+                                        <option value="Low self-esteem">Low self-esteem</option>
+                                        <option value="Burnout">Burnout</option>
+                                        <option value="Stress">Stress</option>
+                                        <option value="Fear of failure">Fear of failure</option>
+                                        <option value="Overthinking">Overthinking</option>
+                                        <option value="Lack of motivation">Lack of motivation</option>
+                                        <option value="Emotional exhaustion">Emotional exhaustion</option>
+                                        <option value="Feeling overwhelmed">Feeling overwhelmed</option>
+                                        <option value="Perfectionism">Perfectionism</option>
+                                        <option value="Social anxiety">Social anxiety</option>
+                                        <option value="Feelings of isolation">Feelings of isolation</option>
+                                        <option value="Lack of purpose">Lack of purpose</option>
+                                        <option value="Work-related stress">Work-related stress</option>
+                                        <option value="Relationship issues">Relationship issues</option>
+                                        <option value="Difficulty relaxing">Difficulty relaxing</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </td>                                
+                                <td>
+                                    <select name="asana[]">
+                                        <option value="Adho Mukha Shvanasana">Adho Mukha Shvanasana</option>
+                                        <option value="Adho Mukha Vrikshasana">Adho Mukha Vrikshasana</option>
+                                        <option value="Akarna Dhanurasana">Akarna Dhanurasana</option>
+                                        <option value="Anantasana">Anantasana</option>
+                                        <option value="Anjaneyasana">Anjaneyasana</option>
+                                        <option value="Ardha Chandrasana">Ardha Chandrasana</option>
+                                        <option value="Ashtanga Namaskara">Ashtanga Namaskara</option>
+                                        <option value="Astavakrasana">Astavakrasana</option>
+                                        <option value="Baddha Konasana">Baddha Konasana</option>
+                                        <option value="Bhadrasana">Bhadrasana</option>
+                                        <option value="Bakasana">Bakasana</option>
+                                        <option value="Kakasana">Kakasana</option>
+                                        <option value="Balasana">Balasana</option>
+                                        <option value="Bhairavasana">Bhairavasana</option>
+                                        <option value="Ankushasana">Ankushasana</option>
+                                        <option value="Bharadvajasana">Bharadvajasana</option>
+                                        <option value="Bhekasana">Bhekasana</option>
+                                        <option value="Bhujangasana">Bhujangasana</option>
+                                        <option value="Bhujapidasana">Bhujapidasana</option>
+                                        <option value="Bidalasana">Bidalasana</option>
+                                        <option value="Marjariasana">Marjariasana</option>
+                                        <option value="Chaturanga Dandasana">Chaturanga Dandasana</option>
+                                        <option value="Dandasana">Dandasana</option>
+                                        <option value="Dhanurasana">Dhanurasana</option>
+                                        <option value="Durvasasana">Durvasasana</option>
+                                        <option value="Garbha Pindasana">Garbha Pindasana</option>
+                                        <option value="Garudasana">Garudasana</option>
+                                        <option value="Gomukhasana">Gomukhasana</option>
+                                        <option value="Gorakshasana">Gorakshasana</option>
+                                        <option value="Halasana">Halasana</option>
+                                        <option value="Hanumanasana">Hanumanasana</option>
+                                        <option value="Janusirsasana">Janusirsasana</option>
+                                        <option value="Jathara Parivartanasana">Jathara Parivartanasana</option>
+                                        <option value="Kapotasana">Kapotasana</option>
+                                        <option value="Karnapidasana">Karnapidasana</option>
+                                        <option value="Kaundinyasana">Kaundinyasana</option>
+                                        <option value="Kraunchasana">Kraunchasana</option>
+                                        <option value="Kukkutasana">Kukkutasana</option>
+                                        <option value="Kurmasana">Kurmasana</option>
+                                        <option value="Lolasana">Lolasana</option>
+                                        <option value="Makarasana">Makarasana</option>
+                                        <option value="Malasana">Malasana</option>
+                                        <option value="Mandukasana">Mandukasana</option>
+                                        <option value="Marichyasana">Marichyasana</option>
+                                        <option value="Matsyasana">Matsyasana</option>
+                                        <option value="Matsyendrasana">Matsyendrasana</option>
+                                        <option value="Mayurasana">Mayurasana</option>
+                                        <option value="Muktasana">Muktasana</option>
+                                        <option value="Natarajasana">Natarajasana</option>
+                                        <option value="Navasana">Navasana</option>
+                                        <option value="Naukasana">Naukasana</option>
+                                        <option value="Padmasana">Padmasana</option>
+                                        <option value="Parighasana">Parighasana</option>
+                                        <option value="Parshvakonasana">Parshvakonasana</option>
+                                        <option value="Parshvottanasana">Parshvottanasana</option>
+                                        <option value="Pashasana">Pashasana</option>
+                                        <option value="Paschimottanasana">Paschimottanasana</option>
+                                        <option value="Pincha Mayurasana">Pincha Mayurasana</option>
+                                        <option value="Prasarita Padottanasana">Prasarita Padottanasana</option>
+                                        <option value="Rajakapotasana">Rajakapotasana</option>
+                                        <option value="Shalabhasana">Shalabhasana</option>
+                                        <option value="Sarvangasana">Sarvangasana</option>
+                                        <option value="Samakonasana">Samakonasana</option>
+                                        <option value="Shavasana">Shavasana</option>
+                                        <option value="Setu Bandha Sarvangasana">Setu Bandha Sarvangasana</option>
+                                        <option value="Siddhasana">Siddhasana</option>
+                                        <option value="Siddha Yoni Asana">Siddha Yoni Asana</option>
+                                        <option value="Simhasana">Simhasana</option>
+                                        <option value="Shirshasana">Shirshasana</option>
+                                        <option value="Kapalasana">Kapalasana</option>
+                                        <option value="Sukhasana">Sukhasana</option>
+                                        <option value="Supta Padangusthasana">Supta Padangusthasana</option>
+                                        <option value="Surya Namaskar">Surya Namaskar</option>
+                                        <option value="Svastikasana">Svastikasana</option>
+                                        <option value="Tadasana">Tadasana</option>
+                                        <option value="Tittibhasana">Tittibhasana</option>
+                                        <option value="Trikonasana">Trikonasana</option>
+                                        <option value="Utthita Trikonasana">Utthita Trikonasana</option>
+                                        <option value="Trivikramasana">Trivikramasana</option>
+                                        <option value="Tulasana">Tulasana</option>
+                                        <option value="Upavishta Konasana">Upavishta Konasana</option>
+                                        <option value="Urdhva Dhanurasana">Urdhva Dhanurasana</option>
+                                        <option value="Urdhva Mukha Shvanasana">Urdhva Mukha Shvanasana</option>
+                                        <option value="Ushtrasana">Ushtrasana</option>
+                                        <option value="Utkatasana">Utkatasana</option>
+                                        <option value="Uttanasana">Uttanasana</option>
+                                        <option value="Utthita Hastapadangusthasana">Utthita Hastapadangusthasana</option>
+                                        <option value="Vairasana">Vairasana</option>
+                                        <option value="Vasishtasana">Vasishtasana</option>
+                                        <option value="Viparita Dandasana">Viparita Dandasana</option>
+                                        <option value="Viparita Karani">Viparita Karani</option>
+                                        <option value="Uttanapadasana">Uttanapadasana</option>
+                                        <option value="Virabhadrasana">Virabhadrasana</option>
+                                        <option value="Virabhadrasana I">Virabhadrasana I</option>
+                                        <option value="Virabhadrasana II">Virabhadrasana II</option>
+                                        <option value="Virabhadrasana III">Virabhadrasana III</option>
+                                        <option value="Virasana">Virasana</option>
+                                        <option value="Dhyana Virasana">Dhyana Virasana</option>
+                                        <option value="Vrikshasana">Vrikshasana</option>
+                                        <option value="Vrischikasana">Vrischikasana</option>
+                                        <option value="Yoganidrasana">Yoganidrasana</option>
+                                        <option value="Pasini Mudra">Pasini Mudra</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select name="time[]" style="width: 100%;">
+                                        <option value="AM">AM</option>
+                                        <option value="PM">PM</option>
+                                    </select>
+                                </td>
+                                
+                            </tr>
+                        </table>
+                        <button type="button" onclick="addRow()">Add More</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="yogaDuration">Are you performing yoga? If yes, how long (in minutes)?</label></td>
+                    <td>
+                        <input type="number" id="yogaDuration" name="yogaDuration" min="0">
+                    </td>
+                </tr>
+            </table>
+            <button type="submit">Submit</button>
+        </form>
+        <script src="form.js"></script>
+    </div>
+</body>
+</html>
