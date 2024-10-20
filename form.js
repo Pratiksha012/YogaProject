@@ -24,7 +24,7 @@ document.getElementById("yogaForm").addEventListener("submit", function(event) {
     }
 
     // Send the data to the server
-    fetch("https://script.google.com/macros/s/AKfycbwv6AO2YONbAQ0rBroTTBsWhmj8WkZLMf_aHv12_Q8Y/dev", {
+    fetch("https://script.google.com/macros/s/AKfycbzuSWpFU6nZ-7oJhHVHlzSwR3sSas4lEfMFIi6JMsUVmgR-HTO9TpuNFJuA2hp6zPIwRw/exec", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
